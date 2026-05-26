@@ -1,0 +1,33 @@
+server:
+  port: 8222
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: customer-service
+          uri: lb:http://CUSTOMER-SERVICE
+          predicates:
+            - Path=/api/v1/customers/**
+        - id: booking-service
+          uri: lb:http://BOOKING-SERVICE
+          predicates:
+            - Path=/api/v1/bookings/**
+        - id: hotel-service
+          uri: lb:http://HOTEL-SERVICE
+          predicates:
+            - Path=/api/v1/commentaires/**
+        - id: hotel-service
+          uri: lb:http://HOTEL-SERVICE
+          predicates:
+            - Path=/api/v1/rooms/**
+        - id: hotel-service
+          uri: lb:http://HOTEL-SERVICE
+          predicates:
+            - Path=/api/v1/hotels**
+        - id: payment-service
+          uri: lb:http://PAYMENT-SERVICE
+          predicates:
+            - Path=/api/v1/payments/**

@@ -1,0 +1,25 @@
+flouci:
+  app_token: ${FLOUCI_APP_TOKEN}
+  app_secret: ${FLOUCI_APP_SECRET}
+  developer_tracking_id: ${DEVELOPER_TRACKING_ID}
+server:
+  port: 8060
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/booking
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping: paymentConfirmation:com.alibou.ecommerce.notification.PaymentNotificationRequest
