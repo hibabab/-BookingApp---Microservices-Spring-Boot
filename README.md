@@ -1,6 +1,6 @@
-# 🏨 BookingApp - Microservices Spring Boot
+#  BookingApp - Microservices Spring Boot
 
-> Application de réservation d'hôtels basée sur une architecture microservices avec Spring Boot, Spring Cloud, Kafka, Flouci et JavaMail.
+> Application de réservation d'hôtels basée sur une architecture microservices avec Spring Boot, Spring Cloud, Kafka, Flouci et JavaMa.
 
 ---
 
