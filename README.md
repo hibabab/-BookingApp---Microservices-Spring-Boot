@@ -51,28 +51,28 @@ feature/
 
 ## Fonctionnalités par service
 
-### ⚙️ config-server
+###  config-server
 Centralise toutes les configurations des microservices. Chaque service récupère sa configuration au démarrage via Spring Cloud Config.
 
-### 🔍 discovery
+###  discovery
 Registre Eureka permettant aux microservices de s'enregistrer et de se découvrir mutuellement sans adresses en dur.
 
-### 🌐 gateway
+###  gateway
 Point d'entrée unique qui route les requêtes vers les microservices via Eureka, et gère les filtres globaux (CORS, sécurité, logging).
 
-### 👤 customer-service
+###  customer-service
 Gestion du cycle de vie des clients : création, mise à jour, consultation et vérification d'existence. Exposé aux autres services via Feign.
 
-### 🏨 hotel-service
+###  hotel-service
 Gestion des hôtels et de leurs chambres : CRUD complet, vérification de disponibilité et mise à jour du statut des chambres (disponible / réservée).
 
-### 📅 booking-service
+###  booking-service
 Orchestration du processus de réservation : vérification du client et de la disponibilité via Feign, création de la réservation, déclenchement du paiement et publication de l'événement de confirmation sur Kafka.
 
-### 💳 payment-service
+###  payment-service
 Traitement des paiements via l'API Flouci : initiation du paiement, gestion des callbacks de succès et d'échec, vérification du statut et historique des transactions.
 
-### 📧 notification-service
+###  notification-service
 Consommation des événements Kafka et envoi d'emails HTML transactionnels au client via JavaMailSender et des templates Thymeleaf. Historique des notifications stocké dans MongoDB.
 
 ---
